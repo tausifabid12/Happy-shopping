@@ -3,7 +3,7 @@ import fakeData from '../../utilities/data';
 import ProductCard from '../ProductsCard/ProductCard';
 
 const HeroTopProducts = () => {
-  const productInfo = fakeData;
+  const productInfo = fakeData?.products;
   return (
     <div className="my-20">
       <h1 className="text-3xl font-bold text-gray-900">Top Products</h1>

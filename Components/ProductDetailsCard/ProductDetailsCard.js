@@ -1,10 +1,6 @@
-import React, { useContext } from 'react';
-import { ProductContext } from '../../utilities/contexts/ProductInfoProvider';
+const ProductDetailsCard = ({ ProductInfo, handleAddToCart }) => {
+  const { img, name, price, category, _id } = ProductInfo;
 
-const ProductDetailsCard = ({ info }) => {
-  const { img, name, price, category } = info;
-  const { state, dispatch } = useContext(ProductContext);
-  const handleAddToCart = () => {};
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
@@ -18,7 +14,10 @@ const ProductDetailsCard = ({ info }) => {
         </div>
 
         <div className="card-actions justify-end">
-          <button onClick={handleAddToCart} className="btn btn-primary">
+          <button
+            onClick={() => handleAddToCart(_id)}
+            className="btn btn-primary"
+          >
             Add to cart
           </button>
         </div>

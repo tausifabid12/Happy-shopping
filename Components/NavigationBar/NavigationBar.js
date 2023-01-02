@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { useState, useEffect } from 'react';
 import {
@@ -8,9 +8,14 @@ import {
   Button,
   IconButton,
 } from '@material-tailwind/react';
+import { ProductContext } from '../../utilities/contexts/ProductInfoProvider';
+import Link from 'next/link';
 
 const NavigationBar = () => {
   const [openNav, setOpenNav] = useState(false);
+  const {
+    state: { cart },
+  } = useContext(ProductContext);
 
   useEffect(() => {
     window.addEventListener(
@@ -27,9 +32,9 @@ const NavigationBar = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           Pages
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -37,9 +42,9 @@ const NavigationBar = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           Account
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -47,9 +52,9 @@ const NavigationBar = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           Blocks
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -57,9 +62,9 @@ const NavigationBar = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           Docs
-        </a>
+        </Link>
       </Typography>
     </ul>
   );
@@ -69,16 +74,39 @@ const NavigationBar = () => {
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
-          href="#"
+          href="/"
           variant="small"
           className="mr-4 cursor-pointer py-1.5 font-normal"
         >
           <span>Material Tailwind</span>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
+        {/* <Button variant="gradient" size="sm" className="hidden lg:inline-block">
           <span>Buy Now</span>
-        </Button>
+        </Button> */}
+        <Link href="/cart">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
+            <div className="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span className="badge badge-md indicator-item">
+                {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+              </span>
+            </div>
+          </label>
+        </Link>
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
