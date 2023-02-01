@@ -1,16 +1,38 @@
+import { Toaster } from 'react-hot-toast';
+import Blogs from '../Components/Blogs/Blogs';
+import ContactUs from '../Components/ContactUs/ContactUs';
 import Hero from '../Components/Hero/Hero';
-import HeroTopProducts from '../Components/HeroTopProducts/HeroTopProducts';
 import Layout from '../Components/Layout/Layout';
+import NavigationBar from '../Components/NavigationBar/NavigationBar';
+import Products from '../Components/Products/Products';
+import ProductsTab from '../Components/ProductsTab/ProductsTab';
+import Services from '../Components/Services/Services';
+import Subscribe from '../Components/Subscribe/Subscribe';
+import TopProducts from '../Components/TopProducts/TopProducts';
 
-export default function Home() {
+export default function Home({ products }) {
+  console.log(products);
   return (
     <Layout title="HomePage">
-      <div className="">
-        <Hero></Hero>
-        <section className="h-screen">
-          <HeroTopProducts />
-        </section>
-      </div>
+      <Hero />
+      <Products products={products} />
+      {/* <TopProducts products={products} /> */}
+      <ProductsTab products={products} />
+      <Blogs />
+      <Services />
+      <ContactUs />
+      <Subscribe />
+      <Toaster position="top-center" reverseOrder={false} />
     </Layout>
   );
+}
+
+export async function getServerSideProps(context) {
+  const products = await fetch('https://fakestoreapi.com/products').then(
+    (res) => res.json()
+  );
+
+  return {
+    props: { products },
+  };
 }

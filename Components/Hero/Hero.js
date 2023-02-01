@@ -1,69 +1,111 @@
+import Image from 'next/image';
 import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
 
 const Hero = () => {
   return (
-    <div className="carousel w-full">
-      <div id="slide1" className="carousel-item relative w-full">
-        <img
-          src="https://placeimg.com/800/200/arch"
-          className="w-full"
-          alt="caeousel-image"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
+    <section className="relative h-[500px] bg-white  mb-20">
+      <div className="absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20 opacity-25" />
+      <Carousel
+        autoPlay
+        infiniteLoop
+        showStatus={false}
+        showIndicators={false}
+        showThumbs={false}
+        interval={3000}
+      >
+        <div className=" w-full h-full mx-20 -m-16">
+          <div className="flex ">
+            <div className="flex items-center w-[50%]">
+              <div className="space-y-7">
+                <h2 className="text-5xl font-bold  text-left">
+                  The Best Quality Product Granted
+                </h2>
+
+                <p className=" text-gray-600 text-left">
+                  We Offer the best Products in the entire country. We always
+                  care about our customers first. Lorem ipsum, dolor sit amet
+                  consectetur
+                </p>
+                <div className="w-1/4">
+                  <button className="btn btn-primary w-full text-left">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Image height={500} width={500} src="/assets/hero-2.gif"></Image>
+              {/* <img
+                
+                src="/assets/hero-1.gif"
+                // className="w-full h-full max-h-screen "
+              /> */}
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          src="https://placeimg.com/800/200/arch"
-          className="w-full"
-          alt="caeousel-image"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle">
-            ❯
-          </a>
+        <div className=" w-full h-full mx-20 -m-16 ">
+          <div className="flex ">
+            <div className="flex items-center w-[50%]">
+              <div className="space-y-7">
+                <h2 className="text-5xl font-bold  text-left">
+                  Choose From over 1M Products
+                </h2>
+
+                <p className=" text-gray-600 text-left">
+                  We Offer the best Products in the entire country. We always
+                  care about our customers first. Lorem ipsum, dolor sit amet
+                  consectetur
+                </p>
+                <div className="w-1/4">
+                  <button className="btn btn-primary w-full text-left">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Image height={500} width={500} src="/assets/hero-1.gif"></Image>
+              {/* <img
+                
+                src="/assets/hero-1.gif"
+                // className="w-full h-full max-h-screen "
+              /> */}
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          src="https://placeimg.com/800/200/arch"
-          className="w-full"
-          alt="caeousel-image"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide4" className="btn btn-circle">
-            ❯
-          </a>
+        <div className=" w-full h-full mx-20 -m-4">
+          <div className="flex ">
+            <div className="flex items-center w-[50%]">
+              <div className="space-y-7">
+                <h2 className="text-5xl font-bold  text-left">
+                  Get Huge Exciting Discount Everyday
+                </h2>
+
+                <p className=" text-gray-600 text-left">
+                  We Offer the best Products in the entire country. We always
+                  care about our customers first. Lorem ipsum, dolor sit amet
+                  consectetur
+                </p>
+                <div className="w-1/4">
+                  <button className="btn btn-primary w-full text-left">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Image height={500} width={500} src="/assets/hero-3.gif"></Image>
+              {/* <img
+                
+                src="/assets/hero-1.gif"
+                // className="w-full h-full max-h-screen "
+              /> */}
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="slide4" className="carousel-item relative w-full">
-        <img
-          src="https://placeimg.com/800/200/arch"
-          className="w-full"
-          alt="caeousel-image"
-        />
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-    </div>
+      </Carousel>
+    </section>
   );
 };
 

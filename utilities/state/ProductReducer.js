@@ -1,7 +1,10 @@
 import actionTypes from './Actiontypes';
+import Cookies from 'js-cookie';
 
 export const initialState = {
-  cart: { cartItems: [] },
+  cart: Cookies.get('cart')
+    ? JSON.parse(Cookies.get('cart'))
+    : { cartItems: [] },
 };
 
 export const productReducer = (state, action) => {
@@ -10,7 +13,7 @@ export const productReducer = (state, action) => {
       let newItem = action.payload;
 
       const existItem = state.cart.cartItems.find(
-        (item) => item._id === newItem._id
+        (item) => item.id === newItem.id
       );
 
       const cartItems = existItem
@@ -18,6 +21,15 @@ export const productReducer = (state, action) => {
             i.name === existItem.name ? newItem : i
           )
         : [...state.cart.cartItems, newItem];
+      Cookies.set('cart', JSON.stringify({ ...state.cart, cartItems }));
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
+
+    case actionTypes.REMOVE_FROM_CART: {
+      const cartItems = state.cart.cartItems.filter(
+        (item) => item.id !== action.payload.id
+      );
+      Cookies.set('cart', JSON.stringify({ ...state.cart, cartItems }));
       return { ...state, cart: { ...state.cart, cartItems } };
     }
 
@@ -25,32 +37,3 @@ export const productReducer = (state, action) => {
       return state;
   }
 };
-
-// function reducer(state, action) {
-//   switch (action.type) {
-//     case 'CART_ADD_ITEM': {
-//       const newItem = action.payload;
-//       const existItem = state.cart.cartItems.find(
-//         (item) => item._id === newItem._id
-//       );
-//       const cartItems = existItem
-//         ? state.cart.cartItems.map((item) =>
-//             item.name === existItem.name ? newItem : item
-//           )
-//         : [...state.cart.cartItems, newItem];
-//       return { ...state, cart: { ...state.cart, cartItems } };
-//     }
-//     default:
-//       return state;
-//   }
-// }
-
-// { ...state, car : [...state,cartItems]};
-//   switch (action.type) {
-//           case actionTypes.ADD_TO_CART:{
-//             const  newItem = action.payload,
-//             const existItem = state.cart.find(item => item?._id === newItem?._id),
-//             const cartItems =
-//           }
-
-//       };

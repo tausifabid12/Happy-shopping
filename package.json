@@ -11,13 +11,24 @@
   "dependencies": {
     "@material-tailwind/react": "^1.2.4",
     "@next/font": "13.1.1",
+    "@stripe/stripe-js": "^1.46.0",
+    "axios": "^1.2.5",
     "daisyui": "^2.46.0",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "firebase-admin": "^11.5.0",
+    "js-cookie": "^3.0.1",
+    "micro": "^10.0.1",
+    "mongodb": "^5.0.0",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hot-toast": "^2.4.0"
+    "react-hook-form": "^7.41.3",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.7.1",
+    "react-responsive-carousel": "^3.2.23",
+    "stripe": "^11.8.0",
+    "swiper": "^8.4.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

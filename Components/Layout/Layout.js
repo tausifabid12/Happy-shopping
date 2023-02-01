@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Footer from '../Footer/Footer';
 import NavigationBar from '../NavigationBar/NavigationBar';
 
 const Layout = ({ title, children }) => {
@@ -10,12 +11,14 @@ const Layout = ({ title, children }) => {
         <meta rel="icon" content="E-commerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-screen-2xl mx-auto bg-white">
         <header>
           <NavigationBar />
         </header>
         <main>{children}</main>
-        <footer>Footer</footer>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </>
   );

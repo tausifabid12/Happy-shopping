@@ -17,8 +17,6 @@ const ProductDetails = () => {
   }
 
   const handleAddToCart = () => {
-    console.log(state.cart.cartItems, 'state.cart.cartItems');
-
     const existsItem = state.cart.cartItems.find((i) => i._id === product._id);
 
     const quantity = existsItem ? existsItem.quantity + 1 : 1;
@@ -34,7 +32,6 @@ const ProductDetails = () => {
     });
   };
 
-  console.log(state.cart, 'this is state');
   return (
     <Layout title="Product Details">
       <ProductDetailsCard
