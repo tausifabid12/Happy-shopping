@@ -14,7 +14,6 @@ const stripePromise = loadStripe(process.env.stripe_public_key);
 const Cart = () => {
   // const [quantityCount, setQuantityCount] = useState(quantity);
   const { user } = useContext(AuthContext);
-  console.log(user?.email);
   const {
     state: {
       cart: { cartItems },
@@ -34,7 +33,7 @@ const Cart = () => {
 
     const checkoutSession = await axios.post('/api/create-checkout-session', {
       products: cartItems,
-      email: user?.email,
+      userId: user?.uid,
     });
 
     const result = await stripe.redirectToCheckout({

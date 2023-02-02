@@ -10,7 +10,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 //     })
 //   : admin.app();
 
-// mongo db connection
+//* mongo db connection
 const uri = `mongodb+srv://${process.env.MDB_USER_NAME}:${process.env.MDB_PASSWORD}@cluster0.brxmqep.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -22,8 +22,9 @@ try {
   client.connect();
   console.log('connecting successfully');
 } catch (error) {
-  console.log(error);
+  console.log(error.message, 'this is mongo connection error');
 }
+
 //* stripe connection
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
@@ -55,17 +56,17 @@ const fullFillOrder = async (session) => {
 
   try {
     const doc = {
+      email: session.metadata.email,
       amount: session.amount_total / 100,
       amount_shipping: session.total_details.amount_shipping / 100,
       images: JSON.parse(session.metadata.images),
+      productIds: JSON.parse(session.metadata.productIds),
       date: new Date().toLocaleDateString(),
     };
     const result = await orders.insertOne(doc);
     console.log(`A document was inserted with the _id: ${result.insertedId}`);
   } catch (error) {
     console.log(error);
-  } finally {
-    await client.close();
   }
 };
 

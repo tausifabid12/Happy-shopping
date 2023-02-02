@@ -11,7 +11,6 @@ import Subscribe from '../Components/Subscribe/Subscribe';
 import TopProducts from '../Components/TopProducts/TopProducts';
 
 export default function Home({ products }) {
-  console.log(products);
   return (
     <Layout title="HomePage">
       <Hero />

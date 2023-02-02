@@ -1,7 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async (req, res) => {
-  const { email, products } = req.body;
+  const { userId, products } = req.body;
 
   const transformedProducts = products.map((product) => ({
     quantity: 1,
@@ -39,8 +39,9 @@ export default async (req, res) => {
     success_url: `${process.env.HOST}/success`,
     cancel_url: `${process.env.HOST}/cart`,
     metadata: {
-      email,
+      userId,
       images: JSON.stringify(products.map((p) => p?.image)),
+      productIds: JSON.stringify(products.map((p) => p?.id)),
     },
   });
 

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Layout from '../Components/Layout/Layout';
 import { FaRegCalendarCheck } from 'react-icons/fa';
 import Link from 'next/link';
+import { AuthContext } from '../utilities/contexts/AuthProvider';
 
 const success = () => {
+  const { user } = useContext(AuthContext);
   return (
     <Layout title="Order Success">
       <section className="w-full h-screen  flex justify-center mt-0  lg:mt-9">
@@ -19,7 +21,7 @@ const success = () => {
             package is ready to delivery. If you want to check the status of the
             order please click the link below
           </p>
-          <Link href="/orders" className="">
+          <Link href={`/orders/${user?.uid}`} className="">
             <button className="btn btn-primary block mx-auto mt-7">
               Go to my orders
             </button>
