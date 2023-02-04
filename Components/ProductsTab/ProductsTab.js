@@ -24,7 +24,7 @@ const ProductsTab = ({ products }) => {
 
   return (
     <div className="h-auto bg-white my-16 mx-10">
-      <Tabs id="custom-animation" value="html">
+      <Tabs id="custom-animation" value="electronics">
         <div className=" grid grid-cols-1 lg:grid-cols-2 w-full">
           <p className="text-4xl font-bold">Featured Product</p>
           <div>

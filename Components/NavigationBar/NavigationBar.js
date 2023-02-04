@@ -5,11 +5,12 @@ import Image from 'next/image';
 import { ProductContext } from '../../utilities/contexts/ProductInfoProvider';
 import Link from 'next/link';
 import { HiUserCircle } from 'react-icons/hi2';
+import { AuthContext } from '../../utilities/contexts/AuthProvider';
 
 const NavigationBar = () => {
-  // const [openNav, setOpenNav] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  // const [isInitialRender, setIsInitialRender] = useState(true);
+  const { user } = useContext(AuthContext);
+
   const {
     state: { cart },
   } = useContext(ProductContext);
@@ -120,18 +121,23 @@ const NavigationBar = () => {
           </Link>
 
           <Link
+            href={`orders/${user?.uid}`}
+            className="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-primary mx-1.5 sm:mx-6"
+          >
+            Orders
+          </Link>
+          <Link
             href="/login"
             className="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-primary mx-1.5 sm:mx-6"
           >
-            logIN
+            login
           </Link>
-
-          <a
-            href="#"
+          <Link
+            href="/signUp"
             className="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-primary mx-1.5 sm:mx-6"
           >
-            pricing
-          </a>
+            SignUp
+          </Link>
 
           <a
             href="#"
