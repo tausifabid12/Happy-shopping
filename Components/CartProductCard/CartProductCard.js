@@ -4,7 +4,7 @@ import actionTypes from '../../utilities/state/Actiontypes';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 
 const CartProductCard = ({ info, handleRemoveFromCart }) => {
-  const { image, title, price, category, description, quantity, id } = info;
+  const { image, title, price, description, quantity, id } = info;
   const [quantityCount, setQuantityCount] = useState(quantity);
   // { title, price, image, description }
   const { dispatch } = useContext(ProductContext);

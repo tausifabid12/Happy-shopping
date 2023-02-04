@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import Image from 'next/image';
+
 import { ProductContext } from '../../utilities/contexts/ProductInfoProvider';
 import actionTypes from '../../utilities/state/Actiontypes';
 

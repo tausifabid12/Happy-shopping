@@ -3,7 +3,6 @@ import React from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 
 const Products = ({ products }) => {
-  console.log(products);
   return (
     <section className="w-full py-10">
       <h2 className="text-2xl text-center lg:text-left lg:text-4xl font-bold mx-10">

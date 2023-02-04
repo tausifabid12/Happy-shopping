@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import OrderOverviewCard from '../OrderOverviewCard/OrderOverviewCard';
 import { FaCalendarAlt } from 'react-icons/fa';
 import OrderDetailsModal from '../OrderDetailsModal/OrderDetailsModal';
-import { Button } from '@material-tailwind/react';
+
 import { toast } from 'react-hot-toast';
 
 const OrdersCard = ({ orders, date }) => {

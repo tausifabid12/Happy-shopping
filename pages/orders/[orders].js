@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
 import Layout from '../../Components/Layout/Layout';
 import OrdersCard from '../../Components/OrdersCard/OrdersCard';
 import clientPromise from '../../utilities/dbConnect';
@@ -15,7 +14,7 @@ const Orders = ({ orders }) => {
     <Layout title="Order History">
       <section className="w-full min-h-screen pt-4 lg:pt-10">
         <div>
-          <h2 className="text-xl lg:text-3xl font-bold">Order History</h2>
+          <h2 className="text-xl lg:text-3xl font-bold pb-6">Order History</h2>
         </div>
         {filteredDates.length ? (
           <div className="grid grid-cols-1 lg:grid-cols-8">

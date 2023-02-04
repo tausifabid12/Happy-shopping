@@ -1,5 +1,5 @@
 import { buffer } from 'micro';
-import * as admin from 'firebase-admin';
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 //* mongo db connection
