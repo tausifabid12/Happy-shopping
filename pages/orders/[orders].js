@@ -11,10 +11,6 @@ const Orders = ({ orders }) => {
     (item, index) => orderDates.indexOf(item) === index
   );
 
-  if (filteredDates?.length) {
-    return;
-  }
-
   return (
     <Layout title="Order History">
       <section className="w-full min-h-screen pt-4 lg:pt-10">

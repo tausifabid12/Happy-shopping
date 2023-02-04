@@ -6,7 +6,7 @@ import {
   DialogBody,
   DialogFooter,
 } from '@material-tailwind/react';
-import ReactToPdf from 'react-to-pdf';
+// import ReactToPdf from 'react-to-pdf';
 
 const OrderDetailsModal = ({ open, handleOpen, orders, date }) => {
   const ref = createRef();
@@ -68,14 +68,14 @@ const OrderDetailsModal = ({ open, handleOpen, orders, date }) => {
         </div>
         <DialogFooter>
           <Button
-            variant="text"
+            variant="gradient"
             color="red"
             onClick={handleOpen}
             className="mr-1"
           >
-            <span>Cancel</span>
+            <span>Close</span>
           </Button>
-          <ReactToPdf
+          {/* <ReactToPdf
             targetRef={ref}
             filename="Invoice.pdf"
             x={40}
@@ -94,7 +94,7 @@ const OrderDetailsModal = ({ open, handleOpen, orders, date }) => {
                 <span>Download Invoice</span>
               </Button>
             )}
-          </ReactToPdf>
+          </ReactToPdf> */}
         </DialogFooter>
       </Dialog>
     </Fragment>

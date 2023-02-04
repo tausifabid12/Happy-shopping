@@ -4,7 +4,7 @@ const OrderOverviewCard = ({ order }) => {
   const { _id, amount, images } = order;
   return (
     <div className="flex space-x-3 ">
-      <div className="flex h-24">
+      <div className="hidden lg:flex h-24">
         <div>
           <img className="w-28 h-full rounded-xl" src={images[0]} alt="" />
         </div>
