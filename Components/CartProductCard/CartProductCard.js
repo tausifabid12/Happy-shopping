@@ -33,11 +33,15 @@ const CartProductCard = ({ info, handleRemoveFromCart }) => {
         <div className="flex flex-col justify-between w-full pb-4">
           <div className="flex justify-between w-full pb-2 space-x-2">
             <div className="space-y-1">
-              <h3 className="text-lg font-semibold leading-snug sm:pr-8">
+              <h3 className="text-sm lg:text-lg font-semibold leading-snug sm:pr-8">
                 {title}
               </h3>
-              <p className="text-sm text-gray-700">{description}</p>
-              <div className="text-sm text-gray-900 flex ">
+              <p className="text-xs lg:text-sm text-gray-700">
+                {description.length > 50
+                  ? description.slice(0, 60) + '...'
+                  : description}
+              </p>
+              <div className="text-sm text-gray-900 hidden lg:flex ">
                 <button
                   onClick={() => handleQuantityUpdate('decrease')}
                   className="text-md hover:bg-gray-300 py-[2px] px-2 rounded-full"
@@ -56,13 +60,13 @@ const CartProductCard = ({ info, handleRemoveFromCart }) => {
               </div>
             </div>
             <div className="text-right">
-              <p className="text-lg font-semibold">{price} $</p>
-              <p className="text-sm line-through text-gray-600">
-                {price + 100} $
+              <p className="text-sm lg:text-lg font-semibold">{price}$</p>
+              <p className="text-sm lg:text-sm line-through text-gray-600">
+                {price + 5}$
               </p>
             </div>
           </div>
-          <div className="flex text-sm divide-x">
+          <div className="flex  justify-end lg:justify-start text-sm divide-x">
             <button
               onClick={() => handleRemoveFromCart(id)}
               type="button"

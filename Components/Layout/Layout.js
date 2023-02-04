@@ -11,7 +11,7 @@ const Layout = ({ title, children }) => {
         <meta rel="icon" content="E-commerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="max-w-screen-2xl mx-auto bg-white">
+      <div className="max-w-[1500px] mx-auto bg-white">
         <header>
           <NavigationBar />
         </header>

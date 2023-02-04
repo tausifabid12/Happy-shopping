@@ -2,7 +2,7 @@ import React from 'react';
 
 const Subscribe = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 mx-10">
+    <section className="bg-white dark:bg-gray-900 mx-10 hidden lg:block">
       <div className="container px-6 py-16 mx-auto">
         <div className="items-center lg:flex">
           <div className="w-full lg:w-1/2">

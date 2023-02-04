@@ -17,8 +17,8 @@ export default function Home({ products }) {
       <Products products={products} />
       {/* <TopProducts products={products} /> */}
       <ProductsTab products={products} />
-      <Blogs />
       <Services />
+      <Blogs />
       <ContactUs />
       <Subscribe />
       <Toaster position="top-center" reverseOrder={false} />

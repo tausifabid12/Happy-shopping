@@ -23,20 +23,26 @@ const ProductsTab = ({ products }) => {
   ];
 
   return (
-    <div className="h-auto bg-white my-16 mx-10">
+    <div className="h-auto  my-16 lg:mx-10">
       <Tabs id="custom-animation" value="electronics">
-        <div className=" grid grid-cols-1 lg:grid-cols-2 w-full">
-          <p className="text-4xl font-bold">Featured Product</p>
+        <div className=" grid grid-cols-1 items-center lg:grid-cols-2 w-full bg-white">
+          <p className="text-2xl text-center lg:text-left lg:text-4xl font-bold">
+            Featured Product
+          </p>
           <div>
-            <TabsHeader>
+            <TabsHeader className="my-5 shadow-lg h-16 border ">
               {[
                 'electronics',
                 'jewelery',
                 "men's clothing",
                 "women's clothing",
               ].map((cat, i) => (
-                <Tab key={i + 1} value={cat}>
-                  {cat}
+                <Tab
+                  key={i + 1}
+                  value={cat}
+                  className=" font-semibold capitalize"
+                >
+                  <h1 className="text-xs"> {cat}</h1>
                 </Tab>
               ))}
             </TabsHeader>
@@ -49,15 +55,15 @@ const ProductsTab = ({ products }) => {
             unmount: { y: 100 },
           }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 py-10 bg-white">
+          <div className="grid grid-cols-1 lg:grid-cols-2 pt-4 ">
             {products.map((Product) => (
               <TabPanel key={Product?.id} value={Product?.category}>
-                <div className="card h-[280px] lg:card-side bg-white shadow-xl">
+                <div className="card lg:h-[280px] flex lg:flex-col lg:card-side bg-white shadow-xl">
                   <div className="w-full p-3">
                     <img
                       src={Product.image}
                       alt={Product.title}
-                      className="h-full w-full"
+                      className="h-[200px] lg:h-full w-full"
                     />
                   </div>
                   <div className="card-body">

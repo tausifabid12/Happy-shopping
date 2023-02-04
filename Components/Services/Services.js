@@ -3,7 +3,7 @@ import { FaCodepen, FaBattleNet, FaCottonBureau } from 'react-icons/fa';
 
 const Services = () => {
   return (
-    <section className="mx-10 py-16">
+    <section className="mx-2 lg:mx-10 py-16">
       <h2 className="text-4xl font-bold text-center">Our Services</h2>
       <div className="w-full py-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="border border-t-2 text-gray-700 flex bg-white flex-col px-7 py-7 rounded-lg items-center space-y-3 shadow-lg">
