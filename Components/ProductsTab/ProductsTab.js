@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Tabs,
   TabsHeader,
@@ -13,14 +13,30 @@ import {
 } from '@material-tailwind/react';
 import dynamic from 'next/dynamic';
 import ProductCard from '../ProductCard/ProductCard';
+import { ProductContext } from '../../utilities/contexts/ProductInfoProvider';
+import actionTypes from '../../utilities/state/Actiontypes';
+import { toast } from 'react-hot-toast';
 
 const ProductsTab = ({ products }) => {
+  const { state, dispatch } = useContext(ProductContext);
   const category = [
     'electronics',
     'jewelery',
     "men's clothing",
     "women's clothing",
   ];
+
+  const handleAddToCart = (productId, Product) => {
+    const existsItem = state.cart.cartItems.find((i) => i.id === productId);
+    const quantity = existsItem ? existsItem.quantity + 1 : 1;
+
+    dispatch({
+      type: actionTypes.ADD_TO_CART,
+      payload: { ...Product, quantity: quantity },
+    });
+
+    toast.success('Added to Cart');
+  };
 
   return (
     <div className="h-auto  my-16 lg:mx-10">
@@ -76,7 +92,10 @@ const ProductsTab = ({ products }) => {
                         : Product.description}
                     </p>
                     <div className="card-actions justify-end">
-                      <button className="btn btn-primary w-full">
+                      <button
+                        onClick={() => handleAddToCart(Product?.id, Product)}
+                        className="btn btn-primary w-full"
+                      >
                         Add to Cart
                       </button>
                     </div>

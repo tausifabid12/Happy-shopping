@@ -1,6 +1,7 @@
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
@@ -99,10 +100,10 @@ const Cart = () => {
               </p>
             </div>
             <div className="flex justify-end space-x-4">
-              <button type="button" className="btn btn-primary ">
+              <Link href="/" className="btn btn-primary ">
                 Back
                 <span className="sr-only sm:not-sr-only">to shop</span>
-              </button>
+              </Link>
               <button
                 onClick={createCheckoutSession}
                 role="link"

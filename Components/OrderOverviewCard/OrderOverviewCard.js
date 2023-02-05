@@ -6,10 +6,10 @@ const OrderOverviewCard = ({ order }) => {
     <div className="flex space-x-3 ">
       <div className="hidden lg:flex h-24">
         <div>
-          <img className="w-28 h-full rounded-xl" src={images[0]} alt="" />
+          <img className="w-28 h-full rounded-xl" src={images[0]} alt="f" />
         </div>
         <div className="relative ml-4">
-          <img className="w-28 h-full rounded-xl" src={images[1]} alt="" />
+          <img className="w-28 h-full rounded-xl" src={images[1]} alt="f" />
           <div className="w-full h-full rounded-xl bg-black absolute flex items-center justify-center opacity-60 top-0">
             <p className="text-white text-sm font-bold">+2</p>
           </div>
