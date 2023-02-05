@@ -8,7 +8,11 @@ const Footer = () => {
           <div className="w-full -mx-6 lg:w-2/5">
             <div className="px-6">
               <a href="#">
-                <img className="w-auto h-28" src="/assets/logo.png" alt="" />
+                <img
+                  className="w-auto h-28"
+                  src="/assets/logo.png"
+                  alt="blog"
+                />
               </a>
 
               <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">

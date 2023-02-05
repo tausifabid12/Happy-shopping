@@ -12,7 +12,7 @@ const Blogs = () => {
             <img
               className="object-cover object-center w-full h-80 xl:h-[28rem] rounded-xl"
               src="/assets/blog-1.jpg"
-              alt=""
+              alt="blog"
             />
 
             <div>

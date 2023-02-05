@@ -28,7 +28,12 @@ const NavigationBar = () => {
       <div className="flex items-center  p-2 flex-grow space-x-10">
         {/* logo */}
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
-          <Image src="/assets/logo.png" height={90} width={120}></Image>
+          <Image
+            src="/assets/logo.png"
+            height={90}
+            width={120}
+            alt="logo"
+          ></Image>
         </div>
         {/* search  */}
         <div className="hidden sm:flex  items-center  flex-grow justify-center pb-6 md:py-0 ">
