@@ -12,16 +12,16 @@ import Link from 'next/link';
 
 const ContactUs = () => {
   return (
-    <section class=" dark:bg-gray-900 h-auto bg-white lg:mx-10 lg:mt-16 rounded-xl lg:pt-10">
+    <section className=" dark:bg-gray-900 h-auto bg-white lg:mx-10 lg:mt-16 rounded-xl lg:pt-10">
       <div>
         <h4 className="text-center text-primary font-semibold">contact us</h4>
         <h4 className="text-center font-semibold text-2xl lg:text-4xl pt-4">
           We Are Always Delighted To Hear From You
         </h4>
       </div>
-      <div class="container lg:px-6 pt-4  mx-auto">
-        <div class="lg:flex lg:items-center lg:-mx-6 ">
-          <div class="hidden lg:block lg:w-1/2 lg:mx-6 ">
+      <div className="container lg:px-6 pt-4  mx-auto">
+        <div className="lg:flex lg:items-center lg:-mx-6 ">
+          <div className="hidden lg:block lg:w-1/2 lg:mx-6 ">
             <img src="/assets/contact-us.gif" alt="contact us" />
           </div>
 

@@ -70,10 +70,10 @@ const Login = () => {
 
   return (
     <Layout title="Login From">
-      <section class="bg-white dark:bg-gray-900 h-screen mb-28 ">
-        <div class="container px-6 pt-8  mx-auto">
-          <div class="lg:flex lg:items-center lg:-mx-6 ">
-            <div class="hidden lg:block lg:w-1/2 lg:mx-6 ">
+      <section className="bg-white dark:bg-gray-900 h-screen mb-28 ">
+        <div className="container px-6 pt-8  mx-auto">
+          <div className="lg:flex lg:items-center lg:-mx-6 ">
+            <div className="hidden lg:block lg:w-1/2 lg:mx-6 ">
               <img src="/assets/signIn.gif" alt="signIn" />
             </div>
 
