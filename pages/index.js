@@ -8,7 +8,7 @@ import ProductsTab from '../Components/ProductsTab/ProductsTab';
 import Services from '../Components/Services/Services';
 import Subscribe from '../Components/Subscribe/Subscribe';
 
-export default function Home({ products }) {
+const Home = ({ products }) => {
   return (
     <Layout title="HomePage">
       <Hero />
@@ -21,9 +21,9 @@ export default function Home({ products }) {
       <Toaster position="top-center" reverseOrder={false} />
     </Layout>
   );
-}
+};
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   const products = await fetch('https://fakestoreapi.com/products').then(
     (res) => res.json()
   );
@@ -32,3 +32,15 @@ export async function getServerSideProps(context) {
     props: { products },
   };
 }
+
+export default Home;
+
+// export async function getServerSideProps(context) {
+//   const products = await fetch('https://fakestoreapi.com/products').then(
+//     (res) => res.json()
+//   );
+
+//   return {
+//     props: { products },
+//   };
+// }
