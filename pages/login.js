@@ -77,7 +77,7 @@ const Login = () => {
               <img src="/assets/signIn.gif" alt="signIn" />
             </div>
 
-            <div className="w-1/2">
+            <div className="lg:mt-8 mt-5 lg:w-1/2 lg:mx-6">
               <Card className="w-full md:w-96 mx-auto py-7 bg-white border-t-2  border-gray-100">
                 <Typography className="text-primary text-center text-4xl font-bold">
                   Sign In
